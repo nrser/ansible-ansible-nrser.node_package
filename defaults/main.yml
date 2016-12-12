@@ -1,4 +1,4 @@
 ---
-# defaults file for qb.nrser_js
-nrser_js_install: true
-nrser_js_yarn: true
+# defaults file for nrser.node_package
+node_package_install: true
+node_package_yarn: true

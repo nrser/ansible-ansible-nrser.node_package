@@ -1,5 +1,5 @@
 ---
-# tasks file for nrser.js
+# tasks file for nrser.node_package
 
 - name: add deps to package.json
   state:
@@ -7,7 +7,7 @@
       key: "{{ npm_package_json_path }}:dependencies:{{ item.key }}"
       init: "{{ item.value }}"
       create: true
-  with_dict: "{{ nrser_js_deps }}"
+  with_dict: "{{ node_package_deps }}"
 
 - name: add dev deps to package.json
   state:
@@ -15,7 +15,7 @@
       key: "{{ npm_package_json_path }}:devDependencies:{{ item.key }}"
       init: "{{ item.value }}"
       create: true
-  with_dict: "{{ nrser_js_dev_deps }}"
+  with_dict: "{{ node_package_dev_deps }}"
 
 - name: "create {{ item }} dir"
   file:
@@ -57,14 +57,14 @@
     dest: "{{ qb_dir }}/.flowconfig"
 
 - name: npm install
-  when: "{{ nrser_js_install == true and nrser_js_yarn == false }}"
+  when: "{{ node_package_install == true and node_package_yarn == false }}"
   command: npm install
   args:
     chdir: "{{ qb_dir }}"
     creates: "{{ qb_dir }}/node_modules"
 
 - name: yarn install
-  when: "{{ nrser_js_install == true and nrser_js_yarn == true}}"
+  when: "{{ node_package_install == true and node_package_yarn == true}}"
   command: yarn
   args:
     chdir: "{{ qb_dir }}"

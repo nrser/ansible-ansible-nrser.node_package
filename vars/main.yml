@@ -1,12 +1,12 @@
 ---
 # vars file for nrser.js
 
-nrser_js_deps:
+node_package_deps:
   lodash: "^4.16.2"
   nrser: "^0.5.0"
   tcomb: "^3.2.15"
 
-nrser_js_dev_deps:
+node_package_dev_deps:
   "@nrser/ugh": "^0.1.6"
   babel-cli: "^6.16.0"
   babel-core: "^6.17.0"
@@ -27,7 +27,7 @@ nrser_js_dev_deps:
   mocha: "^3.1.2"
   node-notifier: "^4.6.1"
 
-nrser_js_package_scripts:
+node_package_package_scripts:
   clean: gulp clean
   build: "gulp build:this"
   build-all: gulp build

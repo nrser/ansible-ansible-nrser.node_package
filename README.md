@@ -1,2 +1,4 @@
-ansible-nrser.node_package
-==========================
+nrser.node_package role
+=======================
+
+
