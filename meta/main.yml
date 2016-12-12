@@ -5,8 +5,6 @@ allow_duplicates: yes
 
 dependencies:
 - name: nrser.state_mate
-  src: git+git@github.com:nrser/ansible-nrser.state_mate.git
-  version: master
   
 - role: qb.npm_package
   npm_package_main: lib/index.js
