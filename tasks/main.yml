@@ -56,6 +56,11 @@
     src: .flowconfig
     dest: "{{ qb_dir }}/.flowconfig"
 
+- name: add .npmignore
+  copy:
+    src: .npmignore
+    dest: "{{ qb_dir }}/.npmignore"
+
 - name: npm install
   when: "{{ node_package_install == true and node_package_yarn == false }}"
   command: npm install
